@@ -244,6 +244,8 @@
       /* FOOTER */
       footer{padding:1.5rem 1.25rem;flex-direction:column;align-items:flex-start;}
       .footer-links{flex-wrap:wrap;gap:.6rem 1.25rem;}
+      #page-whatson .stay-features{grid-template-columns:1fr;}
+      #page-whatson .whatson-cta{padding:3rem 1.25rem!important;}
     }
 
     /* MEMBERS MODAL */
@@ -362,6 +364,7 @@
     <li><a data-page="food" onclick="navClick(event,'food')">Food</a></li>
     <li><a data-page="drinks" onclick="navClick(event,'drinks')">Drinks</a></li>
     <li><a data-page="pub" onclick="navClick(event,'pub')">The Pub</a></li>
+    <li><a data-page="whatson" onclick="navClick(event,'whatson')">What's On</a></li>
     <li><a data-page="find" onclick="navClick(event,'find')">Find Us</a></li>
     <li><a data-page="book" onclick="navClick(event,'book')">Book a Table</a></li>
     <li><a href="https://bookdirect.prenohq.com/inst/#home?propertyId=662NTRPK8jQm1e3WlhdfX9VcWVBgQO4DcY4m0RY3MDAx&JDRN=Y" target="_blank" rel="noopener">Book a Room</a></li>
@@ -379,6 +382,7 @@
   <a onclick="mobileNav(event,'food')">Food</a>
   <a onclick="mobileNav(event,'drinks')">Drinks</a>
   <a onclick="mobileNav(event,'pub')">The Pub</a>
+  <a data-page="whatson" onclick="mobileNav(event,'whatson')">What's On</a>
   <a onclick="mobileNav(event,'find')">Find Us</a>
   <a data-page="book" onclick="mobileNav(event,'book')">Book a Table</a>
   <a href="https://bookdirect.prenohq.com/inst/#home?propertyId=662NTRPK8jQm1e3WlhdfX9VcWVBgQO4DcY4m0RY3MDAx&JDRN=Y" target="_blank" rel="noopener">Book a Room</a>
@@ -690,6 +694,46 @@
 </div>
 
 <!-- ═══ FIND US ═══ -->
+<!-- WHAT'S ON -->
+<div id="page-whatson" class="page">
+  <div class="split-section" style="min-height:420px;">
+    <div class="split-text bg-surface fade-up">
+      <div class="section-label">What's On</div>
+      <h2>Live music, raffles<br />&amp; <em>good times</em></h2>
+      <p class="body">There's always something on at the Riverview. Meal deals through the week, raffles and members draws, DJs and live music on the deck &mdash; here's what to look forward to every week.</p>
+    </div>
+    <div class="split-img"><img loading="lazy" decoding="async" width="1256" height="902" src="assets/section-6.webp" alt="Live entertainment on the deck at Riverview Hotel" /></div>
+  </div>
+
+  <div class="specials-strip" style="justify-content:center;gap:1.25rem;">
+    <div class="special-item"><div><div class="special-day">Happy Hour &middot; Monday to Friday</div><div class="special-name">9&ndash;11am &amp; 5&ndash;6pm</div></div></div>
+  </div>
+
+  <div class="menu-section">
+    <div class="section-label light">Every Week</div>
+    <h2 class="light">Your weekly <em>line-up</em></h2>
+    <div class="stay-features" style="margin-top:2.5rem;">
+      <div class="stay-feat"><div class="stay-feat-icon">&#x1F969;</div><div class="stay-feat-title">Monday &mdash; Steak Night</div><div class="stay-feat-desc">$19 steak from the bistro all night.</div></div>
+      <div class="stay-feat"><div class="stay-feat-icon">&#x1F357;</div><div class="stay-feat-title">Tuesday &mdash; Schnitty Night</div><div class="stay-feat-desc">$16 schnitzels, done right.</div></div>
+      <div class="stay-feat"><div class="stay-feat-icon">&#x1F35D;</div><div class="stay-feat-title">Wednesday &mdash; Family Night</div><div class="stay-feat-desc">$15 pasta, kids eat free, plus free games for the little ones.</div></div>
+      <div class="stay-feat"><div class="stay-feat-icon">&#x1F3AB;</div><div class="stay-feat-title">Thursday &mdash; Raffles &amp; DJ</div><div class="stay-feat-desc">Monster meat tray raffles and Jag the Joker, then a DJ from 8pm.</div></div>
+      <div class="stay-feat"><div class="stay-feat-icon">&#x1F3B8;</div><div class="stay-feat-title">Friday &mdash; Members Draw &amp; Live Band</div><div class="stay-feat-desc">Members draw and raffles, then a live band from 8pm.</div></div>
+      <div class="stay-feat"><div class="stay-feat-icon">&#x1F3A7;</div><div class="stay-feat-title">Saturday &mdash; DJ Night</div><div class="stay-feat-desc">DJ spinning from 8pm.</div></div>
+      <div class="stay-feat"><div class="stay-feat-icon">&#x1F3B6;</div><div class="stay-feat-title">Sunday &mdash; Live on the Deck</div><div class="stay-feat-desc">Live solo act on the deck from 2pm with cocktail specials.</div></div>
+    </div>
+  </div>
+
+  <div class="whatson-cta" style="padding:4rem 3rem;background:var(--bg2);border-top:1px solid var(--border);text-align:center;">
+    <div class="section-label" style="justify-content:center;">Stay in the loop</div>
+    <h2>Never miss a <em>thing</em></h2>
+    <p class="body" style="max-width:560px;margin:1rem auto 1.75rem;">Follow us for the latest events, live music line-ups and specials.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://www.instagram.com/riverview2484/" target="_blank" rel="noopener" class="btn btn-gold">Follow on Instagram</a>
+      <a href="https://www.facebook.com/RiverviewHotel.Murwillumbah/" target="_blank" rel="noopener" class="btn btn-outline-dark">Facebook</a>
+    </div>
+  </div>
+</div>
+
 <div id="page-find" class="page">
   <div style="padding:4.5rem 3rem;background:var(--navy);">
     <div class="section-label light">Find Us</div>
