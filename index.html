@@ -111,9 +111,10 @@
     .split-text.bg-surface{background:var(--surface);}
     .split-text.bg-navy{background:var(--navy);}
     .split-text.bg-bg{background:var(--bg);}
-    .rooms-media{display:flex;flex-direction:column;overflow:hidden;}
-    .rooms-media img{width:100%;flex:1 1 0;min-height:0;object-fit:cover;display:block;transition:transform .6s;}
-    .rooms-media img:hover{transform:scale(1.03);}
+    .rooms-media{position:relative;overflow:hidden;}
+    .rooms-media-stack{position:absolute;inset:0;display:flex;flex-direction:column;}
+    .rooms-media-stack img{width:100%;flex:1 1 0;min-height:0;object-fit:cover;display:block;transition:transform .6s;}
+    .rooms-media-stack img:hover{transform:scale(1.03);}
 
     .food-feature{display:grid;grid-template-columns:1fr 1fr;background:var(--navy);border-top:1px solid rgba(196,152,72,.15);min-height:560px;}
     .food-text{padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center;}
@@ -218,8 +219,7 @@
       /* SPLITS */
       .split-section,.food-feature,.cta-band{grid-template-columns:1fr;}
       .split-img,.cta-img,.food-img{height:260px;order:-1;}
-      .rooms-media{order:-1;}
-      .rooms-media img{flex:none;height:220px;}
+      .rooms-media{order:-1;height:440px;}
       .split-text,.food-text,.cta-text{padding:3rem 1.25rem;}
       /* GALLERY */
       .gallery-strip{grid-template-columns:repeat(2,1fr);height:200px;}
@@ -490,8 +490,10 @@
       <p class="body-light">We're just 1 minute from the start of the Tweed Valley Rail Trail. We've partnered with E-Bike Adventures and the E-Bike &amp; Picnic Experience to create three great packages — saving you up to 20%.</p>
     </div>
     <div class="rooms-media">
-      <img loading="lazy" decoding="async" width="1400" height="2100" src="assets/room.webp" alt="Guest room at the Riverview Hotel, Murwillumbah" />
-      <img loading="lazy" decoding="async" width="800" height="800" src="assets/rail-trail.webp" alt="Couple with e-bikes on the Tweed Valley Rail Trail" />
+      <div class="rooms-media-stack">
+        <img loading="lazy" decoding="async" width="1400" height="2100" src="assets/room.webp" alt="Guest room at the Riverview Hotel, Murwillumbah" />
+        <img loading="lazy" decoding="async" width="800" height="800" src="assets/rail-trail.webp" alt="Couple with e-bikes on the Tweed Valley Rail Trail" />
+      </div>
     </div>
   </div>
 
