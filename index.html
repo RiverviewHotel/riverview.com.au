@@ -111,10 +111,6 @@
     .split-text.bg-surface{background:var(--surface);}
     .split-text.bg-navy{background:var(--navy);}
     .split-text.bg-bg{background:var(--bg);}
-    .rooms-media{position:relative;overflow:hidden;}
-    .rooms-media-stack{position:absolute;inset:0;display:flex;flex-direction:column;}
-    .rooms-media-stack img{width:100%;flex:1 1 0;min-height:0;object-fit:cover;display:block;transition:transform .6s;}
-    .rooms-media-stack img:hover{transform:scale(1.03);}
 
     .food-feature{display:grid;grid-template-columns:1fr 1fr;background:var(--navy);border-top:1px solid rgba(196,152,72,.15);min-height:560px;}
     .food-text{padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center;}
@@ -219,7 +215,6 @@
       /* SPLITS */
       .split-section,.food-feature,.cta-band{grid-template-columns:1fr;}
       .split-img,.cta-img,.food-img{height:260px;order:-1;}
-      .rooms-media{order:-1;height:440px;}
       .split-text,.food-text,.cta-text{padding:3rem 1.25rem;}
       /* GALLERY */
       .gallery-strip{grid-template-columns:repeat(2,1fr);height:200px;}
@@ -480,20 +475,22 @@
   
 
   <div class="split-section">
-    <div class="split-text bg-navy fade-up" style="justify-content:flex-start;">
+    <div class="split-text bg-navy fade-up">
       <div class="section-label light">Stay With Us</div>
       <h2 class="light">Wake up on<br />the <em>river</em></h2>
       <p class="body-light">Clean, comfortable and affordable rooms right above the pub, with the Tweed River at your doorstep. Perfect for a weekend away or a stopover while you explore the Tweed Valley.</p>
-      <div style="text-align:center;margin-top:2rem;"><button class="btn btn-gold" onclick="window.open('https://bookdirect.prenohq.com/inst/#home?propertyId=662NTRPK8jQm1e3WlhdfX9VcWVBgQO4DcY4m0RY3MDAx&JDRN=Y','_blank','noopener')">Book a Room</button></div>
-      <div class="section-label light" style="margin-top:2.75rem;">Rail Trail Packages</div>
-      <h2 class="light">Book our stay plus<br />trail ride <em>adventure packages</em></h2>
-      <p class="body-light">We're just 1 minute from the start of the Tweed Valley Rail Trail. We've partnered with E-Bike Adventures and the E-Bike &amp; Picnic Experience to create three great packages — saving you up to 20%.</p>
+      <button class="btn btn-gold" style="margin-top:2rem;" onclick="window.open('https://bookdirect.prenohq.com/inst/#home?propertyId=662NTRPK8jQm1e3WlhdfX9VcWVBgQO4DcY4m0RY3MDAx&JDRN=Y','_blank','noopener')">Book a Room</button>
     </div>
-    <div class="rooms-media">
-      <div class="rooms-media-stack">
-        <img loading="lazy" decoding="async" width="1400" height="2100" src="assets/room.webp" alt="Guest room at the Riverview Hotel, Murwillumbah" />
-        <img loading="lazy" decoding="async" width="800" height="800" src="assets/rail-trail.webp" alt="Couple with e-bikes on the Tweed Valley Rail Trail" />
-      </div>
+    <div class="split-img"><img loading="lazy" decoding="async" width="1400" height="2100" src="assets/room.webp" alt="Guest room at the Riverview Hotel, Murwillumbah" /></div>
+  </div>
+
+  <div class="split-section">
+    <div class="split-img"><img loading="lazy" decoding="async" width="800" height="800" src="assets/rail-trail.webp" alt="Couple with e-bikes on the Tweed Valley Rail Trail" /></div>
+    <div class="split-text bg-surface fade-up">
+      <div class="section-label">Rail Trail Packages</div>
+      <h2>Book our stay plus<br />trail ride <em>adventure packages</em></h2>
+      <p class="body">We're just 1 minute from the start of the Tweed Valley Rail Trail. We've partnered with E-Bike Adventures and the E-Bike &amp; Picnic Experience to create three great packages &mdash; saving you up to 20%.</p>
+      <button class="btn btn-gold" style="margin-top:2rem;" onclick="window.open('https://bookdirect.prenohq.com/inst/#home?propertyId=662NTRPK8jQm1e3WlhdfX9VcWVBgQO4DcY4m0RY3MDAx&JDRN=Y','_blank','noopener')">Book a Room</button>
     </div>
   </div>
 
