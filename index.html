@@ -350,6 +350,25 @@
     .insta-inner{max-width:920px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.1rem;}
     .insta-head{font-family:"Playfair Display",serif;font-size:1.45rem;font-weight:400;color:var(--cream);}
     .insta-head em{font-style:italic;color:var(--gold2);}
+    /* home featured-events carousel */
+    .home-events{padding:4rem 3rem;background:var(--bg2);border-top:1px solid var(--border);}
+    .ev-carousel{position:relative;max-width:560px;margin:2.25rem auto 0;}
+    .ev-stage{position:relative;height:clamp(360px,58vh,600px);}
+    .ev-slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .7s ease;pointer-events:none;}
+    .ev-slide.on{opacity:1;pointer-events:auto;}
+    .ev-slide img{max-height:100%;max-width:100%;width:auto;height:auto;display:block;border:1px solid var(--border);box-shadow:0 12px 34px rgba(0,0,0,.16);}
+    .ev-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:42px;height:42px;border:1px solid var(--border);background:var(--surface);color:var(--navy);font-size:1.35rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s;}
+    .ev-nav:hover{background:var(--gold2);color:var(--cream);}
+    .ev-prev{left:0;}
+    .ev-next{right:0;}
+    .ev-dots{display:flex;justify-content:center;gap:.6rem;margin-top:1.4rem;}
+    .ev-dot{width:9px;height:9px;border-radius:50%;border:1px solid var(--gold);background:transparent;padding:0;cursor:pointer;transition:background .2s;}
+    .ev-dot[aria-current="true"]{background:var(--gold);}
+    @media(max-width:860px){
+      .home-events{padding:3rem 1.25rem;}
+      .ev-stage{height:clamp(320px,52vh,470px);}
+      .ev-nav{width:34px;height:34px;font-size:1.15rem;}
+    }
     .insta-btn{display:inline-flex;align-items:center;gap:.55rem;}
     .insta-btn svg{width:17px;height:17px;}
     @media(max-width:860px){.insta-band{padding:2.25rem 1.25rem;}}
@@ -434,6 +453,50 @@
     <div class="special-div"></div>
     <div style="font-size:.8rem;color:rgba(253,250,243,.5);max-width:170px;line-height:1.6;text-align:center;">Great value, straight from the bistro.</div>
   </div>
+
+  <div class="home-events">
+    <div class="section-label" style="justify-content:center;">Don't Miss</div>
+    <h2 style="text-align:center;">What's <em>coming up</em></h2>
+    <div class="ev-carousel" id="evCarousel">
+      <div class="ev-stage">
+        <a class="ev-slide on" href="assets/event-tradie-deal.webp" target="_blank" rel="noopener"><img loading="eager" decoding="async" width="1000" height="1416" src="assets/event-tradie-deal.webp" alt="Tradie Deal at the Riverview Hotel - Monday to Friday, buy a Supercrisp between 3pm and 5pm to go in the draw for a $1,800 Milwaukee tool kit" /></a>
+        <a class="ev-slide" href="assets/event-dusty-morgans.webp" target="_blank" rel="noopener"><img loading="lazy" decoding="async" width="900" height="1487" src="assets/event-dusty-morgans.webp" alt="The Dusty Morgans country night - Saturday 3 October" /></a>
+        <a class="ev-slide" href="assets/event-nelson-twins.webp" target="_blank" rel="noopener"><img loading="lazy" decoding="async" width="900" height="1350" src="assets/event-nelson-twins.webp" alt="Nelson Twins Comedy Night - Saturday 24 October" /></a>
+      </div>
+      <button class="ev-nav ev-prev" type="button" aria-label="Previous event">&#8249;</button>
+      <button class="ev-nav ev-next" type="button" aria-label="Next event">&#8250;</button>
+      <div class="ev-dots" id="evDots"></div>
+    </div>
+  </div>
+  <script>
+    (function(){
+      var root=document.getElementById("evCarousel"); if(!root) return;
+      var slides=[].slice.call(root.querySelectorAll(".ev-slide"));
+      var dots=root.querySelector("#evDots"), i=0, timer=null;
+      var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      slides.forEach(function(s,n){
+        var b=document.createElement("button");
+        b.className="ev-dot"; b.type="button";
+        b.setAttribute("aria-label","Show event "+(n+1));
+        b.addEventListener("click",function(){go(n);restart();});
+        dots.appendChild(b);
+      });
+      function go(n){
+        i=(n+slides.length)%slides.length;
+        slides.forEach(function(s,k){s.classList.toggle("on",k===i);});
+        [].forEach.call(dots.children,function(d,k){d.setAttribute("aria-current",k===i?"true":"false");});
+      }
+      function next(){go(i+1);}
+      function prev(){go(i-1);}
+      function tick(){var h=document.getElementById("page-home"); if(h&&h.classList.contains("active")&&!document.hidden) next();}
+      function restart(){if(reduce) return; clearInterval(timer); timer=setInterval(tick,5000);}
+      root.querySelector(".ev-next").addEventListener("click",function(){next();restart();});
+      root.querySelector(".ev-prev").addEventListener("click",function(){prev();restart();});
+      root.addEventListener("mouseenter",function(){clearInterval(timer);});
+      root.addEventListener("mouseleave",restart);
+      go(0); restart();
+    })();
+  </script>
 
   <div class="split-section">
     <div class="split-img"><img loading="lazy" decoding="async" width="1024" height="1204" src="assets/section-1.webp" alt="Sunny afternoon on the Riverview deck" /></div>
