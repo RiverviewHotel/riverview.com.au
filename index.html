@@ -6,6 +6,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Riverview Hotel — Murwillumbah</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -22,15 +25,16 @@
     /* NAV */
     nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:.85rem 3rem;background:rgba(28,43,69,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(196,152,72,.2);}
     .nav-logo{display:flex;align-items:center;gap:.7rem;cursor:pointer;text-decoration:none;}
-    .nav-logo img{width:42px;height:42px;object-fit:contain;}
+    .nav-logo img{height:26px;width:auto;display:block;}
     .nav-logo-text{font-family:"Playfair Display",serif;font-size:1rem;color:var(--cream);line-height:1.2;}
     .nav-logo-text span{display:block;font-size:.6rem;font-family:"DM Sans",sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);}
     .nav-links{display:flex;gap:0;list-style:none;}
-    .nav-links li a{display:block;font-size:.74rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:rgba(253,250,243,.5);text-decoration:none;padding:.5rem 1.1rem;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;cursor:pointer;}
+    .nav-links li a{display:block;white-space:nowrap;font-size:.74rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:rgba(253,250,243,.5);text-decoration:none;padding:.5rem .95rem;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;cursor:pointer;}
     .nav-links li a:hover{color:var(--cream);}
     .nav-links li a.active{color:var(--gold2);border-bottom-color:var(--gold2);}
-    .nav-cta{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);background:var(--gold2);padding:.6rem 1.4rem;text-decoration:none;border:none;cursor:pointer;transition:background .2s;}
+    .nav-cta{white-space:nowrap;font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);background:var(--gold2);padding:.6rem 1.4rem;text-decoration:none;border:none;cursor:pointer;transition:background .2s;}
     .nav-cta:hover{background:var(--gold);}
+    @media(max-width:1280px){nav{padding:.85rem 1.5rem;} .nav-links li a{padding:.5rem .7rem;letter-spacing:.08em;} .nav-cta{padding:.6rem 1rem;}}
     .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
     .hamburger span{display:block;width:22px;height:2px;background:var(--cream);transition:all .3s;}
     .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
@@ -184,7 +188,7 @@
     /* FOOTER */
     footer{padding:1.75rem 3rem;background:#111f33;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
     .footer-logo{display:flex;align-items:center;gap:.65rem;cursor:pointer;}
-    .footer-logo img{width:30px;height:30px;object-fit:contain;}
+    .footer-logo img{display:block;}
     .footer-logo-text{font-family:"Playfair Display",serif;font-size:.88rem;color:rgba(253,250,243,.6);}
     .footer-links{display:flex;gap:1.75rem;list-style:none;}
     .footer-links a{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(253,250,243,.3);text-decoration:none;transition:color .2s;cursor:pointer;}
@@ -368,8 +372,7 @@
 
 <nav>
   <div class="nav-logo" onclick="goTo('home')">
-    <img loading="eager" decoding="async" width="128" height="128" src="assets/logo.webp" alt="Riverview Hotel" />
-    <div class="nav-logo-text">Riverview Hotel<span>Murwillumbah</span></div>
+    <img loading="eager" decoding="async" width="990" height="110" src="assets/logo-horizontal.svg" alt="Riverview Hotel" />
   </div>
   <ul class="nav-links">
     <li><a data-page="home" class="active" onclick="navClick(event,'home')">Home</a></li>
@@ -410,7 +413,7 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div style="margin-bottom:1.5rem;">
-        <img loading="eager" decoding="async" width="128" height="128" src="assets/logo.webp" alt="Riverview Hotel" style="width:110px;height:110px;object-fit:contain;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.5));" />
+        <img loading="eager" decoding="async" width="840" height="165" src="assets/logo-stacked.svg" alt="Riverview Hotel, est. 1893" style="width:min(300px,70vw);height:auto;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.55));" />
       </div>
       <div class="hero-tag">Murwillumbah, Tweed Valley NSW</div>
       <h1>Brews with<br />a <em>view.</em></h1>
@@ -890,7 +893,7 @@
 
 <footer>
   <div class="footer-logo" onclick="goTo('home')">
-    <img loading="eager" decoding="async" width="128" height="128" src="assets/logo.webp" alt="Riverview Hotel" style="width:64px;height:64px;" />
+    <img loading="lazy" decoding="async" width="990" height="110" src="assets/logo-horizontal.svg" alt="Riverview Hotel" style="height:26px;width:auto;opacity:.75;" />
   </div>
   <ul class="footer-links">
     <li><a onclick="goTo('home')">Home</a></li>
